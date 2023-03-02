@@ -1,0 +1,102 @@
+body {
+    /* background-color: rgb(68, 48, 48); */
+    background-color: #F0F0F0;
+  }
+  
+  
+  .card {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    margin: 20px;
+    max-width: 100%;
+    width: 360px;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    /* grid-template-rows: 20px 50px 1fr 50px;  */
+  }
+  
+  .imagem {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  
+  img {
+    max-width: 95%;
+  
+  }
+  
+  .nome {
+    justify-content: center;
+    display: flex;
+    width: 360px;
+    height: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  
+  /* Att todo o CSS */
+  .tipo {
+    align-items: center;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    padding-bottom: 20px;
+  }
+  
+  #tipo0 {
+    
+    /* margin-left: 155px; */
+    font-family: 'Iceberg', cursive;
+    color: red;
+    margin-top: 0px;
+  }
+  
+  #tipo1 {
+    
+    /* margin-left: 90px; */
+    font-family: 'Iceberg', cursive;
+    color: green;
+    margin-top: 0px;
+  }
+  
+  .classe{
+    height: 50px;
+    width: 360px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  #habilidade-0 {
+    margin-left: 15px;
+    font-family: 'Iceberg', cursive;
+    margin-top: -180px;
+    height: 30px;
+    width: 100px;
+    
+  }
+  
+  
+  #habilidade-1 {
+    margin-top: -180px;
+    font-family: 'Iceberg', cursive;
+    margin-left: 245px;
+    height: 30px;
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+  
+    /* margin-left: 280px;
+    font-family: 'Iceberg', cursive;
+    margin-top: -180px;
+    height: 30px;
+    width: 100px; */
+  }
