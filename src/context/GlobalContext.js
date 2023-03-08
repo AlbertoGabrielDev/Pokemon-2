@@ -38,13 +38,6 @@ export const GlobalProvaider = ({
 
 
 
-    // const getPokemon = async () => {
-    //     const result = await axios.get(url)
-    //     setPokemon(result.data.results);
-    // }
-    // console.log(pokemon)
-
-
     return ( <GlobalContext.Provider value = {
             {
                 pokemon,
