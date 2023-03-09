@@ -57,7 +57,9 @@ body {
     /* margin-left: 155px; */
     font-family: 'Iceberg', cursive;
     color: red;
-    margin-top: 0px;
+    position: relative;
+    top: 220px;
+    left: 150px;
   }
   
   #tipo1 {
@@ -65,7 +67,8 @@ body {
     /* margin-left: 90px; */
     font-family: 'Iceberg', cursive;
     color: green;
-    margin-top: 0px;
+    position: relative;
+    bottom: 150px;
   }
   
   .classe{
