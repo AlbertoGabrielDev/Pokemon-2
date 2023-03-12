@@ -4,10 +4,6 @@ import './pokedex.css';
 
 const Pokedex = () => {
     const { pokemon } = useContext(GlobalContext);
-    const [h0, setH0] = useState("");
-    const [h1, setH1] = useState("");
-    const [t0, setT0] = useState("");
-    const [t1, setT1] = useState("");
 
     const pokemonList = [];
 

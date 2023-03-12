@@ -58,8 +58,8 @@ body {
     font-family: 'Iceberg', cursive;
     color: red;
     position: relative;
-    top: 220px;
-    left: 150px;
+    top: 250px;
+    left: 230px;
   }
   
   #tipo1 {
@@ -68,7 +68,8 @@ body {
     font-family: 'Iceberg', cursive;
     color: green;
     position: relative;
-    bottom: 150px;
+    top: 195px;
+    left: 90px;
   }
   
   .classe{
@@ -84,7 +85,8 @@ body {
     margin-top: -180px;
     height: 30px;
     width: 100px;
-    
+    position: relative;
+    top: 60px;
   }
   
   
@@ -96,6 +98,8 @@ body {
     width: 100px;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    bottom: 60px;
   
     /* margin-left: 280px;
     font-family: 'Iceberg', cursive;
