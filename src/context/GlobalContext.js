@@ -15,7 +15,7 @@ export const GlobalProvaider = ({children}) => {
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
 
-    console.log(nextUrl)
+
     useEffect(() => {
         const getPokemonList = async () => {
             try {
@@ -38,10 +38,16 @@ export const GlobalProvaider = ({children}) => {
             }
         }
         getPokemonList();
-    }, [])
+    }, [url])
 
+    const goToNextPage = () => {
+        setUrl(nextUrl);
+    };
 
-
+    const goToPrevPage = () => {
+        setUrl(prevUrl);
+    };
+console.log(prevUrl)
     return (
     <GlobalContext.Provider value = {
             {
@@ -52,12 +58,14 @@ export const GlobalProvaider = ({children}) => {
                
             }
         }>{ children}
-         {
-            <button onClick={() => {
-                
-                setUrl(nextUrl)
-            }}>Pagina Seguinte</button>
-        }
+            {
+                prevUrl && <button onClick={goToPrevPage}>Pagina Anterior</button>
+            }
+            {
+                nextUrl && <button onClick={goToNextPage}>Pagina Seguinte</button>
+            }
+            
+         
 
         </GlobalContext.Provider>
 
