@@ -9,7 +9,8 @@ const Atributos = () => {
     return (
         <>
             {
-                pokemon.map((a) => {
+                
+              pokemon && pokemon.map((a) => {
                     return (
                         <>
                             <div className='card2'>
@@ -22,7 +23,7 @@ const Atributos = () => {
                                     <li>Speed</li>
                                 </ul>
 
-                                {/* <ul className='stats'>
+                                <ul className='stats'>
 
                                     <li className='hp'>
                                         <span className='base_stat'> {a.stats[0].base_stat}</span>
@@ -61,7 +62,7 @@ const Atributos = () => {
                                         <span className='span'><Progressbar bgcolor="black" progress={a.stats[5].base_stat} height={10} /></span>
                                     </li>
 
-                                </ul> */}
+                                </ul>
 
 
 
