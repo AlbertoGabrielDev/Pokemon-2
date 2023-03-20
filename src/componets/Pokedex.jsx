@@ -11,9 +11,9 @@ const Pokedex = () => {
         pokemon.forEach((pokemons, index) => {
             pokemonList.push(
                 <div key={pokemons.name}>
-                    <div className="card">
+                    <div className="card" key={pokemons.id}>
                         <div className="imagem">
-                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index +1 }.svg`} alt={`${pokemons.name}`} />
+                        <img src={pokemons.image} alt={`${pokemons.name}`} />
                         </div>
                         <span className="nome">{pokemons.name}</span>
                         {<p id='habilidade-0'>{pokemons.abilities[0]}</p>}

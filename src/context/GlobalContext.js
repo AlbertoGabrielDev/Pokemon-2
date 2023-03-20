@@ -21,7 +21,7 @@ export const GlobalProvaider = ({children}) => {
             try {
                 const response = await axios.get(url)
                 setNextUrl(response.data.next);
-                setPrevUrl(response.data.prev);
+                setPrevUrl(response.data.previous);
 
                 const results = response.data.results
                 const pokemonData = await Promise.all(results.map(async (result) => {
@@ -30,6 +30,7 @@ export const GlobalProvaider = ({children}) => {
                         name: pokemonResponse.data.name,
                         abilities: pokemonResponse.data.abilities.map((ability) => ability.ability.name),
                         types: pokemonResponse.data.types.map((type) => type.type.name),
+                        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonResponse.data.id}.svg`,
                     }
                 }))
                 setPokemon(pokemonData);
@@ -47,7 +48,7 @@ export const GlobalProvaider = ({children}) => {
     const goToPrevPage = () => {
         setUrl(prevUrl);
     };
-console.log(prevUrl)
+
     return (
     <GlobalContext.Provider value = {
             {
