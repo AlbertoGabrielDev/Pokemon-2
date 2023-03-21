@@ -26,40 +26,40 @@ const Atributos = () => {
                                 <ul className='stats'>
 
                                     <li className='hp'>
-                                        <span className='base_stat'> {a.stats[0].base_stat}</span>
+                                    <span className='base_stat'> {a.stats[0]}</span>
                                         <span className='span'>
-                                            <Progressbar bgcolor="black" progress={a.stats[0].base_stat} height={10} />
+                                        <Progressbar bgcolor="black" progress={a.stats[0]} height={10} />
                                         </span>
                                     </li>
 
 
                                     <li className='attack'>
-                                        <span className='base_stat'> {a.stats[1].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[1].base_stat} height={10} /></span>
+                                        <span className='base_stat'> {a.stats[1]}</span>
+                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[1]} height={10} /></span>
                                     </li>
 
 
                                     <li className='defense'>
-                                        <span className='base_stat'> {a.stats[2].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[2].base_stat} height={10} /></span>
+                                        <span className='base_stat'> {a.stats[2]}</span>
+                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[2]} height={10} /></span>
                                     </li>
 
 
                                     <li className='spattack'>
-                                        <span className='base_stat'> {a.stats[3].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[3].base_stat} height={10} /></span>
+                                        <span className='base_stat'> {a.stats[3]}</span>
+                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[3]} height={10} /></span>
                                     </li>
 
 
                                     <li className='spdefense'>
-                                        <span className='base_stat'> {a.stats[4].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[4].base_stat} height={10} /></span>
+                                        <span className='base_stat'> {a.stats[4]}</span>
+                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[4]} height={10} /></span>
                                     </li>
 
 
                                     <li className='speed'>
-                                        <span className='base_stat'> {a.stats[5].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[5].base_stat} height={10} /></span>
+                                        <span className='base_stat'> {a.stats[5]}</span>
+                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[5]} height={10} /></span>
                                     </li>
 
                                 </ul>

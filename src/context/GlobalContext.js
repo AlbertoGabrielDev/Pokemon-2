@@ -30,6 +30,7 @@ export const GlobalProvaider = ({children}) => {
                         name: pokemonResponse.data.name,
                         abilities: pokemonResponse.data.abilities.map((ability) => ability.ability.name),
                         types: pokemonResponse.data.types.map((type) => type.type.name),
+                        stats: pokemonResponse.data.stats.map((status)=> status.base_stat),
                         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonResponse.data.id}.svg`,
                     }
                 }))

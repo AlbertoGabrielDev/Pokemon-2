@@ -8,7 +8,7 @@ const Pokedex = () => {
     const pokemonList = [];
 
     if (pokemon) {
-        pokemon.forEach((pokemons, index) => {
+        pokemon.forEach((pokemons) => {
             pokemonList.push(
                 <div key={pokemons.name}>
                     <div className="card" key={pokemons.id}>
