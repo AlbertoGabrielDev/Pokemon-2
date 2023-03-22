@@ -7,8 +7,14 @@ function App() {
 
   return (
    <GlobalProvaider>
-    <Pokedex></Pokedex>
-    <Atributos></Atributos>
+    <div className='columns'>
+
+   <div className='poke'><Pokedex></Pokedex></div>
+
+    <div className='habi'><Atributos></Atributos></div>
+    </div>
+    
+    
    </GlobalProvaider>
   );
 }
