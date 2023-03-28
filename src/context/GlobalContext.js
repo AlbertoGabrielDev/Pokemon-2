@@ -32,7 +32,6 @@ export const GlobalProvaider = ({children}) => {
                         abilities: pokemonResponse.data.abilities.map((ability) => ability.ability.name),
                         types: pokemonResponse.data.types.map((type) => type.type.name),
                         stats: pokemonResponse.data.stats.map((status)=> status.base_stat),
-                        // selectTypes: pokemonResponse.data.map(()=>),
                         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonResponse.data.id}.svg`,
                     }
                 }))
@@ -43,6 +42,8 @@ export const GlobalProvaider = ({children}) => {
         }
         getPokemonList();
     }, [url])
+
+
 
     const goToNextPage = () => {
         setUrl(nextUrl);
