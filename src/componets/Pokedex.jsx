@@ -1,9 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import './pokedex.css';
 
 const Pokedex = () => {
     const { pokemon } = useContext(GlobalContext);
+
+    const [info,setInfo] = useState({});
+
+    useEffect(()=>{
+        async function fetchInfo(){
+            // const response = await fetch(pokemons.url);
+        }
+    })
 
     const pokemonList = [];
 

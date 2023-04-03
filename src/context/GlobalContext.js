@@ -5,6 +5,7 @@ import {
     useState
 } from "react"
 import api from "../serve/api";
+import Tipos from "../componets/Selects/Tipos";
 
 export const GlobalContext = createContext();
 
@@ -70,7 +71,7 @@ export const GlobalProvaider = ({children}) => {
                 nextUrl && <button onClick={goToNextPage}>Pagina Seguinte</button>
             }
             
-         
+            <Tipos></Tipos>
 
         </GlobalContext.Provider>
 

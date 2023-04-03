@@ -14,7 +14,8 @@ function App() {
     <div className='habi'><Atributos></Atributos></div>
     </div>
     
-    
+   
+
    </GlobalProvaider>
   );
 }
