@@ -46,11 +46,44 @@ function Tipos() {
         </select>
         {
             pokemonList.map(pokes =>(
-                <Pokedex></Pokedex>
+              <PokemonInfo pokemons={pokes.pokemon} />
             ))
         }
       </div>
     );
   }
 
+
+  function PokemonInfo({ pokemons }) {
+    const [info, setInfo] = useState({});
+  
+    useEffect(() => {
+      async function fetchInfo() {
+        const response = await fetch(pokemons.url);
+        const data = await response.json();
+        setInfo(data);
+        console.log(response)
+        
+      }
+  
+      fetchInfo();
+    }, [pokemons]);
+  
+    //nova tentativa, colocar tudo isso dentro de Pokemons 
+    return (
+      <div>
+        <h2>{pokemons.name}</h2>
+        <ul>
+          <li><strong>Peso:</strong> {info.weight}</li>
+          <li><strong>Habilidades:</strong>
+            <ul>
+              {info.abilities && info.abilities.map(ability => (
+                <li key={ability.ability.name}>{ability.ability.name}</li>
+              ))}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 export default Tipos;
