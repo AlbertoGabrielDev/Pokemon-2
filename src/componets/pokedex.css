@@ -99,7 +99,7 @@ body {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    bottom: 60px;
+    top: 195px;
   
     /* margin-left: 280px;
     font-family: 'Iceberg', cursive;

@@ -35,7 +35,7 @@ function Tipos() {
   
     return (
       <div>
-        <h1>Pokemons por tipo</h1>
+        
         <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
           <option value="">Selecione um tipo</option>
           {types.map(type => (
