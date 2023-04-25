@@ -3,15 +3,19 @@ import { GlobalContext } from "../context/GlobalContext";
 import './pokedex.css';
 
 const Pokedex = () => {
-    const { pokemon } = useContext(GlobalContext);
-
-    const [info,setInfo] = useState({});
-
-    useEffect(()=>{
-        async function fetchInfo(){
-            // const response = await fetch(pokemons.url);
+    const { pokemon ,typeUrl, setTypes} = useContext(GlobalContext);
+    const [info, setInfo] = useState({});
+    console.log("nha" ,console.log(typeUrl))
+    useEffect(() => {
+        async function fetchPokemon() {
+          const response = await fetch(typeUrl);
+          const data = await response.json();
+          setTypes(data.results);
+         
         }
-    })
+    
+        fetchPokemon();
+      }, [typeUrl, setTypes]);
 
     const pokemonList = [];
 

@@ -1,12 +1,12 @@
 import './App.css';
 import Atributos from './componets/Atributos';
 import Pokedex from './componets/Pokedex';
-import { GlobalProvaider } from './context/GlobalContext';
+import { GlobalProvider } from './context/GlobalContext';
 
 function App() {
 
   return (
-   <GlobalProvaider>
+   <GlobalProvider>
     <div className='columns'>
 
    <div className='poke'><Pokedex></Pokedex></div>
@@ -16,7 +16,7 @@ function App() {
     
    
 
-   </GlobalProvaider>
+   </GlobalProvider>
   );
 }
 

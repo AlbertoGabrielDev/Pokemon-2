@@ -1,50 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Pokedex from '../Pokedex';
+import React, { useContext, useEffect, useState } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
+import Pokedex from "../Pokedex";
 
 const SelectTipos = () => {
-  const [tipos, setTipos] = useState([]);
-  const [tipoSelecionado, setTipoSelecionado] = useState(null);
-  const [pokemons, setPokemons] = useState([]);
+  const { types, setTypes } = useContext(GlobalContext);
+  const [selectedType, setSelectedType] = useState("");
+
+  const handleTypeChange = (e) => {
+    setSelectedType(e.target.value);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://pokeapi.co/api/v2/type');
-        setTipos(response.data.results);
-      } catch (error) {
-        console.log(error);
-      }
+    const fetchTypes = async () => {
+      const response = await fetch("https://pokeapi.co/api/v2/type");
+      const data = await response.json();
+      setTypes(data.results);
+      //console.log(setTypes)
     };
-    fetchData();
-  }, []);
 
-  const handleTipoSelecionado = async (event) => {
-    const tipo = event.target.value;
-    setTipoSelecionado(tipo);
-    try {
-      const response = await axios.get(`https://pokeapi.co/api/v2/type/${tipo}`);
-      const pokemonUrls = response.data.pokemon.map((p) => p.pokemon.url);
-      const pokemonData = await Promise.all(pokemonUrls.map(async (url) => {
-        const response = await axios.get(url);
-        return response.data;
-      }));
-      setPokemons(pokemonData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    fetchTypes();
+  }, []);
 
   return (
     <div>
-      <label htmlFor="tipos">Selecione um tipo de Pokémon:</label>
-      <select name="tipos" id="tipos" onChange={handleTipoSelecionado}>
-        <option value="">Selecione um tipo</option>
-        {tipos.map((tipo) => (
-          <option key={tipo.name} value={tipo.name}>{tipo.name}</option>
-        ))}
+      <select value={selectedType} onChange={handleTypeChange}>
+        <option value="">Selecione um tipo de Pokémon</option>
+        {types &&
+          types.map((type) => (
+            <option key={type.name} value={type.url}>
+              {type.name}
+            </option>
+          ))}
       </select>
-      {tipoSelecionado && <Pokedex pokemons={pokemons} />}
+      {selectedType && <Pokedex typeUrl={selectedType} />}
     </div>
   );
 };
