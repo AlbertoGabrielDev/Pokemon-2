@@ -55,6 +55,7 @@ export const GlobalProvider = ({ children }) => {
         const getTypesList = async () => {
             try {
                 const response = await axios.get(typesUrl);
+                
                 const results = response.data.results;
                 const typesData = results.map((result) => {
                     return {
@@ -63,6 +64,7 @@ export const GlobalProvider = ({ children }) => {
                     };
                 });
                 setTypes(typesData);
+             
             } catch (error) {
                 console.log(error);
                 setError(true);
@@ -93,6 +95,8 @@ export const GlobalProvider = ({ children }) => {
                 types,
                 selectedType,
                 handleTypeChange,
+                typesUrl,
+                setTypes
             }}
         >
             {children}
