@@ -7,15 +7,11 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
-    const [typesUrl, setTypesUrl] = useState(
-        "https://pokeapi.co/api/v2/type?limit=100"
-    );
     const [pokemon, setPokemon] = useState(null);
     const [error, setError] = useState(false);
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
-    const [types, setTypes] = useState([]);
-    const [selectedType, setSelectedType] = useState("");
+
 
     useEffect(() => {
         const getPokemonList = async () => {
@@ -51,27 +47,6 @@ export const GlobalProvider = ({ children }) => {
         getPokemonList();
     }, [url]);
 
-    useEffect(() => {
-        const getTypesList = async () => {
-            try {
-                const response = await axios.get(typesUrl);
-                
-                const results = response.data.results;
-                const typesData = results.map((result) => {
-                    return {
-                        name: result.name,
-                        url: result.url,
-                    };
-                });
-                setTypes(typesData);
-             
-            } catch (error) {
-                console.log(error);
-                setError(true);
-            }
-        };
-        getTypesList();
-    }, [typesUrl]);
 
     const goToNextPage = () => {
         setUrl(nextUrl);
@@ -81,9 +56,6 @@ export const GlobalProvider = ({ children }) => {
         setUrl(prevUrl);
     };
 
-    const handleTypeChange = (e) => {
-        setSelectedType(e.target.value);
-    };
 
     return (
         <GlobalContext.Provider
@@ -92,11 +64,6 @@ export const GlobalProvider = ({ children }) => {
                 error,
                 setError,
                 setPokemon,
-                types,
-                selectedType,
-                handleTypeChange,
-                typesUrl,
-                setTypes
             }}
         >
             {children}
